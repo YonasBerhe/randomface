@@ -21,16 +21,20 @@ state = {
      buildList: this.buildList
    });
 
-  componentWillMount() {
-    // setState()
-  };
+  // componentWillMount() {
+  //   // setState()
+  // };
 
   addListItem = (e) => {
     e.preventDefault();
+
     const value  = e.target.value;
+
     console.log(value)
     this.setState((previousState) => ({
+
       list: previousState.list.concat(this.state.input)
+
     }));
   };
 

@@ -9,7 +9,7 @@ render() {
   return (
       // <div style={style} >
 
-          <div>
+      <div>
       <form onSubmit={this.props.addListItem}>
         <input type= "text" onChange={this.props.updateInput}   value={this.props.input}>
         </input>
