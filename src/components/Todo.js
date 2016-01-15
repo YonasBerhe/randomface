@@ -2,19 +2,18 @@ import React from "react";
 
 import ToDoList from './TodoList';
 
-import AddListItems from './TodoList';
+import AddListItems from './AddListItems';
 
-class ToDo extends React.Components {
+class Todo extends React.Component {
 
 
-  state = {
-    list: ['thing', 'thing', 'thing']
-
-  };
+state = {
+    list: ['thing', 'thing', 'thing'],
+    input: ' '
+};
   //  buildList => (){
-   buildList= () => {
-     return
-          this.state.list.map((el, i) => <li key={i}>{el}</li>)
+   buildList = () => {
+     return this.state.list.map((el, i) => <li key={i}>{el}</li>)
    };
 
    buildToDoListProps = () => ({
@@ -26,25 +25,26 @@ class ToDo extends React.Components {
     // setState()
   };
 
-  addListItem = () => {
-
+  addListItem = (e) => {
     e.preventDefault();
-
-    const { value, tacos} = e.target;
+    const value  = e.target.value;
+    console.log(value)
     this.setState((previousState) => ({
-      list: previousState.list.concat(value)
-    }))
+      list: previousState.list.concat(this.state.input)
+    }));
   };
 
+
+updateInput = (event) => {
+  this.setState({
+    input: event.target.value
+  })
+};
   render() {
     return (
-
-
-    // one root Component
-
     <div>
-    <AddListItems addListItem={this.addListItem} />
-    //spread operator
+    <AddListItems addListItem={this.addListItem} updateInput={this.updateInput} />
+
       <ToDoList {...this.buildToDoListProps()} />
     </div>
 

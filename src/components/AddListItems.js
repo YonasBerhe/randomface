@@ -6,9 +6,10 @@ render() {
   return (
       <div>
       <form onSubmit={this.props.addListItem}>
-        <input type= "text">
-            <button className="btn btn-default">Add Item</button>
+        <input type= "text" onChange={this.props.updateInput}   value={this.props.input}>
         </input>
+        <button className="btn btn-default" onClick={this.props.addListItem}>Add Item</button>
+
       </form>
       </div>
     );

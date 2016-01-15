@@ -6,7 +6,7 @@ render() {
   return (
     <div>
     <ul>
-    this.props.buildList();
+    {this.props.buildList()}
     </ul>
     </div>
 

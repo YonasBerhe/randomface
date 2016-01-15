@@ -9,7 +9,7 @@ class App extends React.Component {
   render(){
     console.log(this.helloWorld());
     return(
-      <div><ToDo /> </div>
+      <div><Todo /> </div>
     );
   }
 }
