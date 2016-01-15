@@ -1,8 +1,10 @@
-var webpack = require('webpack');  
-module.exports = {  
+var webpack = require('webpack');
+module.exports = {
     entry: [
       'babel-polyfill',
+      //
       'webpack/hot/only-dev-server',
+      //
       './src/app.js'
     ],
     output: {
@@ -10,14 +12,17 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
+
+    //loader happen prior to the application re-rendering
         loaders: [
-            { 
-              test: /\.js$/, 
-              exclude: /node_modules/, 
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
               loader: 'babel-loader',
               query: {
                 plugins: ['transform-runtime'],
-                presets:['es2015', 'react', 'stage-0']
+
+                presets:['es2015','react','stage-0']
               }
             },
             { test: /\.css$/, loader: "style!css" }
