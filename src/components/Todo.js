@@ -8,7 +8,7 @@ class Todo extends React.Component {
 
 
 state = {
-    list: ['thing', 'thing', 'thing'],
+    list: ['1', '2', '3'],
     input: ' '
 };
   //  buildList => (){
